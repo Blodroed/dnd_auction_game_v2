@@ -5,6 +5,7 @@ import signal
 import subprocess
 import sys
 from pathlib import Path
+import time
 from typing import List
 
 
@@ -69,7 +70,7 @@ def launch_agents(num_agents: int, extra_args: List[str] | None = None) -> None:
                 break
             try:
                 # Small sleep to avoid busy waiting
-                signal.pause()
+                time.sleep(1)
             except AttributeError:
                 # Windows: fall back to a simple blocking wait on the first process
                 procs[0].wait(timeout=1)

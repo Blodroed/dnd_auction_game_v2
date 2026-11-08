@@ -34,6 +34,10 @@ dependencies = [
   "uvicorn",
   "websockets",
   "Jinja2",
+  "dash>=3.3.0",
+  "numpy>=1.24.4",
+  "plotly-express>=0.4.1",
+  "watchdog>=4.0.2",
 ]
 
 [project.urls]

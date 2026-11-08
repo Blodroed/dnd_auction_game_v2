@@ -1,0 +1,163 @@
+:root {
+  /* CSS HEX */
+  --almond: #F6DEC4ff;
+  --red-cmyk: #E21C1Eff;
+  --licorice: #150A12ff;
+  --reseda-green: #787D58ff;
+  --kobicha: #735028ff;
+  --ochre: #D77A28ff;
+
+  /* CSS HSL */
+  --almond-hsl: hsla(31, 74%, 87%, 1);
+  --red-cmyk-hsl: hsla(359, 78%, 50%, 1);
+  --licorice-hsl: hsla(316, 35%, 6%, 1);
+  --reseda-green-hsl: hsla(68, 17%, 42%, 1);
+  --kobicha-hsl: hsla(32, 48%, 30%, 1);
+  --ochre-hsl: hsla(28, 69%, 50%, 1);
+
+  /* CSS RGB */
+  --almond-rgb: rgba(246, 222, 196, 1);
+  --red-cmyk-rgb: rgba(226, 28, 30, 1);
+  --licorice-rgb: rgba(21, 10, 18, 1);
+  --reseda-green-rgb: rgba(120, 125, 88, 1);
+  --kobicha-rgb: rgba(115, 80, 40, 1);
+  --ochre-rgb: rgba(215, 122, 40, 1);
+
+  /* CSS Gradient */
+  --gradient-top: linear-gradient(0deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-right: linear-gradient(90deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-bottom: linear-gradient(180deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-left: linear-gradient(270deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-top-right: linear-gradient(45deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-bottom-right: linear-gradient(135deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-top-left: linear-gradient(225deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-bottom-left: linear-gradient(315deg, #F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+  --gradient-radial: radial-gradient(#F6DEC4ff, #E21C1Eff, #150A12ff, #787D58ff, #735028ff, #D77A28ff);
+}
+
+@font-face {
+  font-family: 'Quentin Caps';
+  src: url('./Quentincaps-owxKz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+    background-color: var(--red-cmyk);
+} */
+
+body {
+    background-color: var(--red-cmyk);
+    filter: 
+        sepia(0.3)
+        saturate(1.2)
+        contrast(1.1);
+}
+
+p {
+    color: var(--almond);
+    font-family: 'Quentin Caps', sans-serif;
+    font-size: 16px;
+}
+
+label {
+    color: var(--almond);
+    font-family: 'Quentin Caps', sans-serif;
+    font-size: 1rem;
+}
+
+/* Agent Stats Panel Styling */
+.stat-card {
+    background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+    border: 2px solid var(--kobicha);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--ochre);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.stat-card h4 {
+    color: var(--almond);
+    margin: 0;
+}
+
+.stat-card p {
+    color: var(--almond);
+    margin: 0;
+}
+
+/* Settings Panel Styling */
+.rc-slider-track {
+    background-color: var(--ochre) !important;
+}
+
+.rc-slider-handle {
+    border-color: var(--ochre) !important;
+}
+
+.rc-slider-handle:hover {
+    border-color: var(--almond) !important;
+}
+
+/* Dropdown styling */
+.Select-control {
+    background-color: #2a2a2a !important;
+    border-color: var(--kobicha) !important;
+}
+
+/* Recommendation badges */
+.recommendation-high {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.recommendation-medium {
+    background-color: #FF9800 !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.recommendation-low {
+    background-color: #F44336 !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Chart highlighting */
+.agent-highlight {
+    filter: drop-shadow(0 0 10px var(--ochre));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .stat-card {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .dashboard-flex {
+        flex-direction: column !important;
+    }
+    
+    .charts-container {
+        flex-direction: column !important;
+    }
+}
+
+.Select-value-label {
+    color: var(--almond) !important;
+}

@@ -1,0 +1,142 @@
+{
+  "type": "object",
+  "properties": {
+    "round": {
+      "description": "The current round number.",
+      "type": "integer"
+    },
+    "states": {
+      "description": "A map of agent IDs to their current state (gold and points).",
+      "type": "object",
+      "patternProperties": {
+        "^local_rand_id_\\d+$": {
+          "type": "object",
+          "properties": {
+            "gold": {
+              "description": "The amount of gold the agent has",
+              "type": "integer"
+            },
+            "points": {
+              "description": "The current number of points the agent has.",
+              "type": "integer"
+            }
+          },
+          "required": ["gold", "points"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "auctions": {
+      "description": "A map of auction IDs to the current auctions available for bidding.",
+      "type": "object",
+      "patternProperties": {
+        "^a\\d+$": {
+          "type": "object",
+          "properties": {
+            "die": {
+              "description": "The size of the die (e.g., 4 for a d4).",
+              "type": "integer"
+            },
+            "num": {
+              "description": "The number of dice to roll.",
+              "type": "integer"
+            },
+            "bonus": {
+              "description": "The bonus or penalty to add to the roll sum.",
+              "type": "integer"
+            }
+          },
+          "required": ["die", "num", "bonus"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "prev_auctions": {
+      "description": "A map of auction IDs to auctions from previous rounds, including the outcome and bids.",
+      "type": "object",
+      "patternProperties": {
+        "^a\\d+$": {
+          "type": "object",
+          "properties": {
+            "die": {
+              "description": "The size of the die (e.g., 4 for a d4).",
+              "type": "integer"
+            },
+            "num": {
+              "description": "The number of dice rolled.",
+              "type": "integer"
+            },
+            "bonus": {
+              "description": "The bonus or penalty added to the roll sum.",
+              "type": "integer"
+            },
+            "reward": {
+              "description": "The final reward (roll sum + bonus).",
+              "type": "integer"
+            },
+            "bids": {
+              "description": "An array of bids made on this auction, with the winning bid first.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "a_id": {
+                    "description": "The ID of the bidding agent.",
+                    "type": "string"
+                  },
+                  "gold": {
+                    "description": "The amount of gold bid.",
+                    "type": "integer"
+                  }
+                },
+                "required": ["a_id", "gold"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["die", "num", "bonus", "reward", "bids"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "remainder_gold_income": {
+      "description": "An array of gold income values for remaining rounds, showing the gold added from the bank for that round's winner.",
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "remainder_bank_limit": {
+      "description": "An array of bank gold limits for the remaining rounds.",
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "remainder_bank_interest": {
+      "description": "An array of bank interest multipliers for the remaining rounds.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "current_agent": {
+      "description": "The ID of the agent whose turn it is.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "round",
+    "states",
+    "auctions",
+    "prev_auctions",
+    "remainder_gold_income",
+    "remainder_bank_limit",
+    "remainder_bank_interest",
+    "current_agent"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,123 @@
+{
+  "agent_info": {
+    "name": "DoomGuy666",
+    "player_id": "Albert Salvesen Oroe",
+    "version": "2.0.0",
+    "description": "Advanced auction agent with Vulture Mode strategies"
+  },
+  "connection": {
+    "host": "opentsetlin.com",
+    "port": 8000,
+    "reconnect_attempts": 5,
+    "reconnect_delay": 0.5,
+    "timeout": 30
+  },
+  "strategy": {
+    "type": "vulture_mode",
+    "aggression_multiplier": 1.5,
+    "max_bid_ratio": 0.4,
+    "min_auctions_target": 8,
+    "deadspace_threshold": 1.5,
+    "high_value_threshold": 12,
+    "competition_penalty": 0.15,
+    "bonus_weight": 0.25,
+    "max_auction_share": 0.35,
+    "min_roi_vs_interest": 1.2,
+    "prefer_low_competition": true,
+    "min_vulture_score": 0.01,
+    "min_ev_threshold": 0.0,
+    "bid_aggression": 1.2
+  },
+  "bid_modes": {
+    "current_mode": "MEAN_GREEN",
+    "focus_ratio": 0.6,
+    "min_bid_amount": 100,
+    "max_single_bid_ratio": 0.4,
+    "spread_factor": 0.9,
+    "conservative_multiplier": 0.6,
+    "mean_green_aggression": 10
+  },
+  "economy": {
+    "spending_ratio": 0.35,
+    "accumulation_penalty": 0.9,
+    "interest_threshold": 1.025,
+    "reserve_ratio": 0.5,
+    "emergency_spend_threshold": 0.9,
+    "min_reserve_gold": 500,
+    "max_budget_per_round": 0.4,
+    "max_bet_limit": 0.9,
+    "use_max_bet_limit": false,
+    "use_dynamic_max_bet_limit": true,
+    "timeline_look_ahead": 100,
+    "aggressive_spending_threshold": 0.5,
+    "conservative_spending_threshold": 0.9,
+    "max_adjustment_factor": 1.2,
+    "emergency_spending_enabled": true,
+    "pool_contribution_rate": 0.2,
+    "pool_buy_enabled": true,
+    "min_points_reserve": 1,
+    "pool_contribution_use_highest": false,
+    "phase_capital_build_end": 150,
+    "phase_compound_end": 500,
+    "phase_optimization_end": 800,
+    "phase_compound_high_interest": 0.2,
+    "phase_compound_medium_high_interest": 0.30,
+    "phase_compound_medium_interest": 0.35,
+    "phase_compound_low_interest": 0.45,
+    "phase_capital_spending": 0.6,
+    "phase_optimization_spending": 0.3,
+    "phase_endgame_spending": 1.0,
+    "interest_high_threshold": 7.0,
+    "interest_medium_high_threshold": 4.0,
+    "interest_medium_threshold": 2.0
+  },
+  "logging": {
+    "level": "INFO",
+    "enable_performance_logs": true,
+    "enable_debug_mode": false,
+    "log_bids": true,
+    "log_analysis": true,
+    "verbose_mode": false
+  },
+  "data_analysis": {
+    "min_vulture_score": 0.001,
+    "max_bid_per_auction": 2000,
+    "competition_analysis_rounds": 5,
+    "pattern_detection_enabled": true,
+    "learning_rate": 0.1,
+    "historical_weight": 0.3
+  },
+  "storage": {
+    "max_memory_rounds": 50,
+    "auto_save_interval": 10,
+    "enable_persistence": true,
+    "backup_logs": true,
+    "compression_enabled": false
+  },
+  "performance": {
+    "enable_caching": true,
+    "max_cache_size": 1000,
+    "batch_processing": true,
+    "parallel_analysis": false,
+    "memory_optimization": true
+  },
+  "safety": {
+    "max_total_bid": 0.95,
+    "emergency_stop_loss": 1000,
+    "min_profit_threshold": -5000,
+    "risk_level": "high",
+    "enable_failsafe": true
+  },
+  "dashboard": {
+    "enable_real_time_updates": false,
+    "update_interval": 1.0,
+    "enable_remote_config": false,
+    "api_port": 8001
+  },
+  "meta": {
+    "version": "2.0.0",
+    "last_updated": "2025-10-10T10:46:03.808156",
+    "created_by": "DoomGuy666_ConfigSystem",
+    "schema_version": "1.0"
+  }
+}
